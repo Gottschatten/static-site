@@ -1,3 +1,4 @@
+from typing import Text
 from htmlnode import LeafNode
 
 
@@ -55,3 +56,10 @@ class TextNode:
 
     def __repr__(self) -> str:
        return f'TextNode({self.text}, {self.text_type}, {self.url})'
+
+def split_nodes_delimiter(old_nodes, delimiter, text_type):
+    new_nodes = []
+    for node in old_nodes:
+        if node is not TextNode:
+            new_nodes.append(node)
+
